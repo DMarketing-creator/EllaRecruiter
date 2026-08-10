@@ -1,7 +1,8 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style="">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Ella AI Recruiter | Smarter Recruitment, From Resume to Hire</title>
+<title>Ella HR Assistant | Smarter Recruitment, From Resume to Hire</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -137,6 +138,51 @@
         section[id] {
             scroll-margin-top: 96px;
         }
+
+        /* --- Resume scanning visual (Phase 01) --- */
+        @keyframes scanMove {
+            0%   { top: 0%;   opacity: 0; }
+            8%   { opacity: 1; }
+            92%  { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .scan-line {
+            position: absolute;
+            left: 0; right: 0;
+            height: 34px;
+            background: linear-gradient(180deg, rgba(244,124,108,0) 0%, rgba(244,124,108,0.4) 50%, rgba(244,124,108,0) 100%);
+            animation: scanMove 2.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes tagPop {
+            0%, 100% { opacity: 0; transform: translateY(4px) scale(0.92); }
+            14%, 76% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .skill-tag {
+            position: absolute;
+            background: #0e4471;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 9999px;
+            opacity: 0;
+            box-shadow: 0 6px 14px rgba(14,68,113,0.25);
+            animation: tagPop 3.6s ease-in-out infinite;
+            white-space: nowrap;
+        }
+        @keyframes ringProgress {
+            0%   { stroke-dashoffset: 226; }
+            70%, 100% { stroke-dashoffset: 14; }
+        }
+        .match-ring-fill {
+            stroke-dasharray: 226;
+            stroke-dashoffset: 226;
+            animation: ringProgress 2.6s ease-out forwards infinite;
+        }
+
+        /* --- Pricing --- */
+        .price-card { display: flex; flex-direction: column; height: 100%; }
     </style>
 </head>
 <body class="text-on-surface selection:bg-highlight/30 bg-surface">
@@ -147,16 +193,16 @@
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
 <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">graphic_eq</span>
 </div>
-<span class="text-xl font-bold text-primary-container tracking-tight">Ella AI Recruiter</span>
+<span class="text-xl font-bold text-primary-container tracking-tight">Ella HR Assistant</span>
 </div>
 <nav class="hidden md:flex items-center gap-lg">
 <a class="text-label-md text-primary-container font-bold border-b-2 border-highlight" href="#overview" data-nav-link>Overview</a>
 <a class="text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#workflow" data-nav-link>The Journey</a>
 <a class="text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#features" data-nav-link>Features</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#pricing" data-nav-link>Pricing</a>
 <a class="text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#contact" data-nav-link>Contact</a>
 </nav>
 <div class="flex items-center gap-md">
-
 <a class="btn-primary-custom px-lg py-3 rounded-lg font-bold shadow-premium hover:scale-105 transition-all inline-flex items-center justify-center" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Experience Ella</a>
 </div>
 </div>
@@ -193,7 +239,7 @@
 </div>
 <div class="fade-in-up relative lg:pl-lg">
 <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-surface-container-lowest">
-<img alt="HR professional using Ella AI Recruiter" class="w-full h-auto" src="ella-hero-image.png">
+<img alt="HR professional using Ella HR Assistant" class="w-full h-auto" src="ella-hero-image.png">
 </div>
 <div class="absolute -top-10 -right-10 w-40 h-40 bg-highlight/10 rounded-full blur-3xl -z-10"></div>
 </div>
@@ -211,7 +257,35 @@
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="order-2 lg:order-1">
 <div class="bg-surface-container-lowest p-lg rounded-lg shadow-premium border border-outline-variant/10">
-<img alt="Resume Screening" class="w-full h-auto rounded-lg mb-lg" src="https://lh3.googleusercontent.com/aida/AP1WRLuzyz4G6D2GD75K1rDc0CwfVv0m9KKloia8u0tGFEszlFRshb8hEwoDUJY4vRgoEdX6nn2rt7YBZtdHHuwO2v1bnl4OM9349ELCPeb4dnIu6HGBbKWr3rpAd7ZwnCuVLxq4jVHu_Qdzcv9va6C112eNZY3rtmr8HhZJ-W6SgpTNcZcmh7xTU-H-3CZFyRtH3uU7jc649ZXkw6twK1vfnWugHy2-8WQxYYk-yVBy7Otc_yvK5q_UMmTjnUEf">
+<div class="relative bg-surface-container-low rounded-lg overflow-hidden mb-lg" style="height:260px;">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative bg-white rounded-md shadow-md p-md overflow-hidden" style="width:170px; height:224px;">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-6 h-6 rounded-full bg-primary-container/20 flex-shrink-0"></div>
+<div class="flex-1">
+<div class="h-1.5 w-3/4 bg-primary-container/30 rounded mb-1"></div>
+<div class="h-1.5 w-1/2 bg-primary-container/15 rounded"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="h-1 w-full bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-5/6 bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-full bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-4/6 bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-full bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-3/6 bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-full bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-5/6 bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-full bg-outline-variant/40 rounded"></div>
+<div class="h-1 w-2/6 bg-outline-variant/40 rounded"></div>
+</div>
+<div class="scan-line"></div>
+</div>
+</div>
+<span class="skill-tag" style="top:22px; right:14px; animation-delay:0.3s;">React Native</span>
+<span class="skill-tag" style="top:110px; right:6px; animation-delay:1.5s;">GraphQL</span>
+<span class="skill-tag" style="top:190px; left:14px; animation-delay:2.6s;">Team Lead</span>
+</div>
 <div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg">
 <div class="flex items-center gap-sm">
 <span class="w-3 h-3 bg-green-500 rounded-full"></span>
@@ -403,6 +477,126 @@
 </div>
 </div>
 </section>
+<!-- Pricing -->
+<section class="py-section-gap bg-surface-container-low/50 border-y border-outline-variant/20" id="pricing">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-xxl">
+<h2 class="text-display-lg mb-md">Simple, Usage-Based Pricing</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Pay only for what you screen and schedule. No subscriptions, no lock-in.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-lg items-stretch">
+
+<!-- Tier 1: Free Trial -->
+<div class="price-card p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/20 hover:shadow-xl transition-all">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-sm">Free Trial</span>
+<div class="mb-md mt-2">
+<span class="text-primary-container font-extrabold" style="font-size:36px;">Free</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-lg">Test Ella on your first role, no card required.</p>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">First 5 CV screenings, same position</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">1 scheduled video interview</span>
+</li>
+</ul>
+<a class="w-full text-center border-2 border-outline text-primary-container py-3 rounded-lg font-bold hover:bg-surface-container-low transition-all" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Start Free</a>
+</div>
+
+<!-- Tier 2: Screening Pack (Most Popular) -->
+<div class="price-card p-lg bg-surface-container-lowest rounded-lg shadow-premium border-2 border-highlight relative hover:shadow-xl transition-all">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-highlight text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow whitespace-nowrap">Most Popular</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-sm mt-sm">Screening Pack</span>
+<div class="mb-md mt-2 flex items-baseline gap-2 flex-wrap">
+<span class="text-primary-container font-extrabold" style="font-size:36px;">S$100</span>
+<span class="text-sm text-on-surface-variant">/ up to 200 CVs</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-lg">For a single high-volume role.</p>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Up to 200 resume analyses</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Post-analysis AI summary &amp; recommendation report</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Additional 100-resume blocks at S$45</span>
+</li>
+</ul>
+<a class="w-full text-center btn-primary-custom py-3 rounded-lg font-bold hover:opacity-90 transition-all" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Get Started</a>
+</div>
+
+<!-- Tier 3: Interview Pack -->
+<div class="price-card p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/20 hover:shadow-xl transition-all">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-sm">Interview Pack</span>
+<div class="mb-md mt-2 flex items-baseline gap-2 flex-wrap">
+<span class="text-primary-container font-extrabold" style="font-size:36px;">S$50</span>
+<span class="text-sm text-on-surface-variant">/ 10 credits</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-lg">1 credit = 1 phone or video interview cycle.</p>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Schedule phone call interview</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">AI-conducted phone interview</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Post-interview AI summary &amp; recommendation</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">AI-scheduled interview with HOD</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-surface-variant">Additional 10-credit blocks at S$45</span>
+</li>
+</ul>
+<a class="w-full text-center border-2 border-outline text-primary-container py-3 rounded-lg font-bold hover:bg-surface-container-low transition-all" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Add Interview Credits</a>
+</div>
+
+<!-- Tier 4: Enterprise -->
+<div class="price-card p-lg bg-primary-container rounded-lg shadow-premium hover:shadow-xl transition-all">
+<span class="text-xs font-bold uppercase tracking-widest text-on-primary/60 mb-sm">Enterprise</span>
+<div class="mb-md mt-2">
+<span class="text-on-primary font-extrabold" style="font-size:36px;">Custom</span>
+</div>
+<p class="text-sm text-on-primary/70 mb-lg">For high-volume hiring teams and multi-role pipelines.</p>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-primary/80">Unlimited resume screening</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-primary/80">Dedicated account manager</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-primary/80">Custom integrations &amp; SLA</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-highlight text-lg">check_circle</span>
+<span class="text-sm text-on-primary/80">Volume-based pricing</span>
+</li>
+</ul>
+<a class="w-full text-center bg-on-primary text-primary-container py-3 rounded-lg font-bold hover:opacity-90 transition-all" href="#contact">Call Sales</a>
+</div>
+
+</div>
+<p class="text-center text-xs text-on-surface-variant mt-xl">All prices shown in Singapore Dollars (SGD). Additional blocks are billed on top-up.</p>
+</div>
+</section>
 <!-- Final CTA & Form -->
 <section class="py-section-gap bg-primary-container relative overflow-hidden" id="contact">
 <div class="max-w-container-max mx-auto px-lg relative z-10">
@@ -460,9 +654,12 @@
 <div class="w-8 h-8 rounded-full bg-on-primary flex items-center justify-center text-primary-container">
 <span class="material-symbols-outlined text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">graphic_eq</span>
 </div>
-<span class="text-lg font-bold text-on-primary tracking-tight">Ella AI Recruiter</span>
+<div>
+<span class="text-lg font-bold text-on-primary tracking-tight block">Ella HR Assistant</span>
+<span class="text-on-primary/50 text-xs font-medium">Powered by McLink Group</span>
 </div>
-<p class="text-on-primary/40 text-xs font-medium">© 2024 Ella AI Recruiter. All rights reserved.</p>
+</div>
+<p class="text-on-primary/40 text-xs font-medium">© 2024 Ella HR Assistant. All rights reserved.</p>
 </div>
 </footer>
 <script>
