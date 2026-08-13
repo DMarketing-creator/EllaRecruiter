@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Ella HR Assistant | Smarter Recruitment, From Resume to Hire</title>
+<title>Ella AI | Smarter Recruitment, From Requisition to Hire</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -139,7 +139,7 @@
             scroll-margin-top: 96px;
         }
 
-        /* --- Resume scanning visual (Phase 01) --- */
+        /* --- Resume scanning visual (Stage 05) --- */
         @keyframes scanMove {
             0%   { top: 0%;   opacity: 0; }
             8%   { opacity: 1; }
@@ -184,65 +184,105 @@
         /* --- Pricing --- */
         .price-card { display: flex; flex-direction: column; height: 100%; }
 
-        /* --- Texture & sharp accents --- */
-        .bg-grid {
-            background-image:
-                linear-gradient(rgba(14,68,113,0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(14,68,113,0.07) 1px, transparent 1px);
-            background-size: 28px 28px;
+        /* --- Stage badge --- */
+        .stage-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 9999px;
+            background-color: #0e4471;
+            color: #fff;
+            font-weight: 800;
+            font-size: 13px;
+            flex-shrink: 0;
         }
-        .bg-grid-light {
-            background-image:
-                linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
-            background-size: 28px 28px;
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #42474f;
         }
-        .bg-dots {
-            background-image: radial-gradient(rgba(14,68,113,0.16) 1.4px, transparent 1.4px);
-            background-size: 20px 20px;
+        .checklist-item .material-symbols-outlined {
+            font-size: 18px;
+            color: #16a34a;
         }
-        .bg-diagonal {
+        .manual-flow-box {
+            border: 1px dashed #9fcaff;
+            background: #f1f3ff;
+        }
+
+        /* --- Subheadline pill --- */
+        .subheadline-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e9edff;
+            border: 1px solid #c7d6ee;
+            color: #0e4471;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+        }
+        .subheadline-pill .dot {
+            width: 6px; height: 6px; border-radius: 9999px; background: #F47C6C;
+        }
+
+
+        /* --- Customer Journey texture only --- */
+        #workflow {
+            background-color: rgba(241, 243, 255, 0.50);
             background-image: repeating-linear-gradient(
-                135deg,
-                rgba(14,68,113,0.035),
-                rgba(14,68,113,0.035) 1px,
+                -45deg,
+                rgba(14, 68, 113, 0.05),
+                rgba(14, 68, 113, 0.05) 1px,
                 transparent 1px,
-                transparent 16px
+                transparent 14px
             );
         }
-        .fade-mask {
-            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 35%, transparent 100%);
-            mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 35%, transparent 100%);
+
+        /* --- Background texture --- */
+        .bg-texture {
+            background-image: radial-gradient(rgba(14, 68, 113, 0.16) 1.5px, transparent 1.5px);
+            background-size: 22px 22px;
         }
-        .grain-overlay { position: relative; }
-        .grain-overlay::after {
-            content: "";
+        .hero-visual {
+            background: linear-gradient(135deg, #0e4471 0%, #164976 55%, #002d51 100%);
+        }
+        .hero-photo {
+            background: linear-gradient(160deg, #E9E1D4 0%, #D9CEBB 40%, #C9BCA3 100%);
+            position: relative;
+            min-height: 420px;
+        }
+        .hero-photo::before {
+            content: '';
             position: absolute; inset: 0;
-            z-index: 1;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
-            opacity: 0.07;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            border-radius: inherit;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.5) 0%, transparent 40%),
+                radial-gradient(circle at 80% 75%, rgba(120,100,70,0.15) 0%, transparent 45%);
         }
-        .title-bar {
-            width: 56px;
-            height: 4px;
-            border-radius: 2px;
-            background: linear-gradient(135deg, #F47C6C 0%, #F4C96B 100%);
-            margin: 14px auto 0;
+        .hero-figure {
+            position: absolute; bottom: 0; right: 6%;
+            width: 46%; height: 88%;
+            background: linear-gradient(180deg, #F0E4D3 0%, #DCCBAE 100%);
+            border-radius: 999px 999px 0 0;
+            opacity: 0.9;
         }
-        .title-bar-left { margin: 14px 0 0; }
-        .cf-corner {
+        .overlay-card {
             position: absolute;
-            width: 22px; height: 22px;
-            border-color: #F47C6C;
-            pointer-events: none;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(6px);
+            border-radius: 8px;
+            box-shadow: 0 12px 28px -8px rgba(14,68,113,0.25);
+            padding: 12px 14px;
             z-index: 2;
         }
-        .cf-tl { top: -2px; left: -2px; border-top: 3px solid; border-left: 3px solid; border-top-left-radius: 8px; }
-        .cf-br { bottom: -2px; right: -2px; border-bottom: 3px solid; border-right: 3px solid; border-bottom-right-radius: 8px; }
-        .cf-navy { border-color: #0e4471; }
     </style>
 </head>
 <body class="text-on-surface selection:bg-highlight/30 bg-surface">
@@ -253,7 +293,7 @@
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
 <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">graphic_eq</span>
 </div>
-<span class="text-xl font-bold text-primary-container tracking-tight">Ella HR Assistant</span>
+<span class="text-xl font-bold text-primary-container tracking-tight">Ella AI</span>
 </div>
 <nav class="hidden md:flex items-center gap-lg">
 <a class="text-label-md text-primary-container font-bold border-b-2 border-highlight" href="#overview" data-nav-link>Overview</a>
@@ -263,7 +303,7 @@
 <a class="text-label-md text-on-surface-variant hover:text-primary-container transition-colors" href="#contact" data-nav-link>Contact</a>
 </nav>
 <div class="flex items-center gap-md">
-<a class="btn-primary-custom px-lg py-3 rounded-lg font-bold shadow-premium hover:scale-105 transition-all inline-flex items-center justify-center" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Experience Ella</a>
+<a class="btn-primary-custom px-lg py-3 rounded-lg font-bold shadow-premium hover:scale-105 transition-all inline-flex items-center justify-center" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Explore Ella</a>
 </div>
 </div>
 </header>
@@ -272,14 +312,15 @@
 <section class="pt-40 pb-section-gap max-w-container-max mx-auto px-lg" id="overview">
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="fade-in-up">
+<span class="subheadline-pill"><span class="dot"></span>HR AI Screening &amp; Outbound Recruiter Agent</span>
 <h1 class="text-display-lg lg:text-display-xl mb-lg">
                     Discover the <span class="text-gradient">Right People</span>. Give Every Candidate a Better Journey.
                 </h1>
 <p class="text-body-lg text-on-surface-variant mb-xl max-w-xl leading-relaxed">
-                    Ella brings intelligence, structure, and a human touch to every stage of recruitment—from the first resume to the final hiring decision.
+                    Ella brings intelligence, structure, and a human touch to every stage of recruitment, from the requisition to the final hiring decision.
                 </p>
 <div class="flex flex-wrap gap-md mb-xl">
-<a class="btn-primary-custom px-lg py-4 rounded-lg text-lg font-bold shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all inline-flex items-center justify-center" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Experience Ella</a>
+<a class="btn-primary-custom px-lg py-4 rounded-lg text-lg font-bold shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all inline-flex items-center justify-center" href="https://ellai.mclinkgroup.com/" target="_blank" rel="noopener noreferrer">Explore Ella</a>
 <a class="border-2 border-outline text-primary-container px-lg py-4 rounded-lg text-lg font-bold hover:bg-surface-container-low transition-all inline-flex items-center justify-center" href="#workflow">See the Recruitment Journey</a>
 </div>
 <div class="flex flex-col sm:flex-row gap-lg opacity-80">
@@ -299,22 +340,135 @@
 </div>
 <div class="fade-in-up relative lg:pl-lg">
 <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-surface-container-lowest">
-<img alt="HR professional using Ella HR Assistant" class="w-full h-auto" src="ella-hero-image.png">
+<img alt="HR professional using Ella AI" class="w-full h-auto" src="ella-hero-image.png">
 </div>
 <div class="absolute -top-10 -right-10 w-40 h-40 bg-highlight/10 rounded-full blur-3xl -z-10"></div>
 </div>
 </div>
 </section>
-<!-- The 6-Phase Journey Section -->
-<section class="py-section-gap bg-surface-container-low/50 border-y border-outline-variant/20 bg-diagonal" id="workflow">
+<!-- The 10-Stage Journey Section -->
+<section class="py-section-gap border-y border-outline-variant/20" id="workflow">
 <div class="max-w-container-max mx-auto px-lg">
 <div class="text-center mb-xxl">
 <h2 class="text-display-lg mb-md">The Ella Ecosystem Journey</h2>
-<div class="title-bar"></div>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-lg">A seamless, end-to-end recruitment workflow designed for clarity and speed.</p>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">A seamless, end-to-end recruitment workflow, from requisition to hire, designed for clarity and speed.</p>
 </div>
 <div class="space-y-section-gap">
-<!-- Phase 1: AI Resume Screening -->
+
+<!-- Stage 01: AI Recruitment Portal – Requisition & Workflow Management -->
+<div class="grid lg:grid-cols-2 gap-xxl items-center">
+<div class="order-2 lg:order-1">
+<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-highlight text-3xl">assignment</span>
+<h4 class="text-xl font-bold text-primary-container">Requisition Form Includes</h4>
+</div>
+<ul class="space-y-sm">
+<li class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Job description (aligned for AI screening)</li>
+<li class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Job title / department / vacancies / target hiring date</li>
+<li class="checklist-item"><span class="material-symbols-outlined">check_circle</span> HOD availability: dates &amp; times</li>
+<li class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Screening questions: up to 2 HOD + AI-generated (capped at 5)</li>
+</ul>
+<div class="mt-lg pt-lg border-t border-outline-variant/20">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">HR User Prompt Section</p>
+<p class="text-sm text-on-surface-variant">HR configures standard policies and instructs Ella to act as a professional HR representative.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="stage-badge mb-sm">1</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 01</span>
+<h3 class="text-headline-xl mb-md">AI Recruitment Portal: Requisition &amp; Workflow Management</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">HODs log in to the portal to submit the requisition, view requisition details, track candidate results, and manage the full workflow in one central process.</p>
+</div>
+</div>
+
+<!-- Stage 02: HR / Management Approval -->
+<div class="grid lg:grid-cols-2 gap-xxl items-center">
+<div>
+<span class="stage-badge mb-sm">2</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 02</span>
+<h3 class="text-headline-xl mb-md">HR / Management Approval</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">The finalized role request / job ad is submitted for HR or management approval before it goes any further.</p>
+</div>
+<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
+<div class="flex items-center justify-center gap-lg mb-lg">
+<div class="px-lg py-3 rounded-lg border-2 border-primary-container text-primary-container font-bold">Approved?</div>
+</div>
+<div class="flex items-center justify-between gap-md">
+<div class="flex-1 flex items-center gap-sm p-md rounded-lg bg-red-50 border border-error/30">
+<span class="material-symbols-outlined text-error">cancel</span>
+<div>
+<p class="text-sm font-bold text-error">NO, Returned / Rejected</p>
+<p class="text-xs text-on-surface-variant">Review the request or close with reason.</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md mt-md">
+<div class="flex-1 flex items-center gap-sm p-md rounded-lg bg-green-50 border border-green-300">
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+<div>
+<p class="text-sm font-bold text-green-700">YES, Proceed to Job Posting</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Stage 03: Post Job Ads -->
+<div class="grid lg:grid-cols-2 gap-xxl items-center">
+<div class="order-2 lg:order-1">
+<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-md">Post On</p>
+<div class="flex items-center justify-around mb-lg">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-primary-container">work</span>
+<span class="text-xs font-medium">JobStreet</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-primary-container">business_center</span>
+<span class="text-xs font-medium">LinkedIn</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-primary-container">thumb_up</span>
+<span class="text-xs font-medium">Facebook</span>
+</div>
+</div>
+<div class="manual-flow-box p-md rounded-lg">
+<p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-1">Manual Flow</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">HR or a manual handler receives expressions of interest via external sites, confirms interest, and sends the application portal link to the candidate. Requisition and application fields are strictly synchronized for AI data analysis.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="stage-badge mb-sm">3</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 03</span>
+<h3 class="text-headline-xl mb-md">Post Job Ads</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">HR posts job ads across channels (JobStreet, LinkedIn, Facebook) with direct links to the application portal.</p>
+</div>
+</div>
+
+<!-- Stage 04: Application Received -->
+<div class="grid lg:grid-cols-2 gap-xxl items-center">
+<div>
+<span class="stage-badge mb-sm">4</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 04</span>
+<h3 class="text-headline-xl mb-md">Application Received</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Applications are received directly in the portal via the linked application form. Fields are strictly synchronized with the Stage 01 Requisition Form to enable AI candidate matching.</p>
+</div>
+<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-md">Collects</p>
+<div class="grid grid-cols-2 gap-md">
+<div class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Skill assessment</div>
+<div class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Role expectations</div>
+<div class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Salary expectations</div>
+<div class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Availability / notice period</div>
+<div class="checklist-item"><span class="material-symbols-outlined">check_circle</span> Resume upload</div>
+</div>
+</div>
+</div>
+
+<!-- Stage 5: Ella AI – Resume Screening -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="order-2 lg:order-1">
 <div class="bg-surface-container-lowest p-lg rounded-lg shadow-premium border border-outline-variant/10">
@@ -343,91 +497,87 @@
 <div class="scan-line"></div>
 </div>
 </div>
-<span class="skill-tag" style="top:22px; right:14px; animation-delay:0.3s;">React Native</span>
-<span class="skill-tag" style="top:110px; right:6px; animation-delay:1.5s;">GraphQL</span>
-<span class="skill-tag" style="top:190px; left:14px; animation-delay:2.6s;">Team Lead</span>
+<span class="skill-tag" style="top:22px; right:14px; animation-delay:0.3s;">Proceed</span>
+<span class="skill-tag" style="top:110px; right:6px; animation-delay:1.5s;">Screening</span>
+<span class="skill-tag" style="top:190px; left:14px; animation-delay:2.6s;">AI Result</span>
 </div>
 <div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg">
 <div class="flex items-center gap-sm">
 <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-<span class="font-bold text-primary-container">Resume Screened</span>
+<span class="font-bold text-primary-container">Email sent: recommendation list to HR</span>
 </div>
-<span class="font-bold text-highlight">Match: 94%</span>
 </div>
 </div>
 </div>
 <div class="order-1 lg:order-2">
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 01</span>
-<h3 class="text-headline-xl mb-md">AI Resume Screening</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">Ella scans thousands of resumes in seconds, highlighting top talent based on your specific role criteria. No more generic keywords—Ella understands context and experience depth.</p>
+<span class="stage-badge mb-sm">5</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 05</span>
+<h3 class="text-headline-xl mb-md">Ella AI: Resume Screening</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Ella screens uploaded resumes and sends HR a recommendation list (Proceed or Reject) based on the AI result.</p>
 </div>
 </div>
-<!-- Phase 2: HR Resume Approval -->
+
+<!-- Stage 06: HR Assessment (Approve/Reject) -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div>
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 02</span>
-<h3 class="text-headline-xl mb-md">HR Resume Approval</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">The Human Gate. Artificial Intelligence assists, but you decide. HR receives a curated list of top matches to approve before Ella initiates any candidate contact.</p>
+<span class="stage-badge mb-sm">6</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 06</span>
+<h3 class="text-headline-xl mb-md">HR Assessment: Approve / Reject</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">HR reviews Ella's screening results and the candidate details, then decides whether the candidate proceeds.</p>
 </div>
 <div class="relative">
 <div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-highlight/10 relative overflow-hidden">
-<span class="cf-corner cf-tl"></span>
-<span class="cf-corner cf-br"></span>
 <div class="absolute top-0 left-0 w-2 h-full bg-highlight"></div>
 <div class="flex items-center gap-md mb-md">
 <div class="w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-bold text-lg">KW</div>
 <div>
 <h4 class="text-xl font-bold text-primary-container">Kelvin Wong</h4>
-<p class="text-sm text-on-surface-variant">Software Architect Candidate</p>
+<p class="text-sm text-on-surface-variant">Candidate under HR Assessment</p>
 </div>
 </div>
-<p class="text-body-md mb-lg italic text-on-surface-variant">"Strong architectural background in fintech. Highly recommended for AI Voice Screen."</p>
-<div class="flex gap-md">
+<div class="flex gap-md mb-md">
 <button class="flex-1 btn-primary-custom py-3 rounded-lg font-bold hover:opacity-90 transition-all">Approve</button>
 <button class="flex-1 border border-outline py-3 rounded-lg font-bold hover:bg-surface-container-low transition-all">Reject</button>
 </div>
+<div class="p-md rounded-lg bg-red-50 border border-error/30 flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-lg">mail</span>
+<p class="text-xs text-error font-medium">If rejected, a rejection email sent to thank the candidate and notify the outcome.</p>
 </div>
 </div>
 </div>
-<!-- Phase 3: Secure Interview Scheduling -->
+</div>
+
+<!-- Stage 07: Ella AI – Send Interview Invitation -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="order-2 lg:order-1">
 <div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
 <div class="flex items-center justify-between mb-lg">
-<h4 class="text-xl font-bold text-primary-container">Interview Scheduling</h4>
-<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">SECURE LINK</span>
+<h4 class="text-xl font-bold text-primary-container">Invitation Email</h4>
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">Sent by Ella</span>
 </div>
-<div class="space-y-md">
-<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex justify-between items-center">
-<div class="flex items-center gap-sm">
+<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex items-center gap-sm">
 <span class="material-symbols-outlined text-highlight">event_available</span>
-<span class="text-sm font-medium">Candidate Selected: Oct 24, 2:00 PM</span>
-</div>
-<span class="material-symbols-outlined text-green-500">check_circle</span>
-</div>
-<div class="p-md bg-surface-container-low rounded-lg border border-outline-variant/10 flex justify-between items-center opacity-60">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-on-surface-variant">link</span>
-<span class="text-sm">Calendar Sync: Outlook/Google</span>
-</div>
-</div>
+<span class="text-sm font-medium">Calendar link to book the phone interview</span>
 </div>
 </div>
 </div>
 <div class="order-1 lg:order-2">
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 03</span>
-<h3 class="text-headline-xl mb-md">Secure Interview Scheduling</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">No more manual coordination. Ella sends secure, one-time booking tokens to approved candidates, syncing directly with your team's availability while protecting privacy.</p>
+<span class="stage-badge mb-sm">7</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 07</span>
+<h3 class="text-headline-xl mb-md">Ella AI: Send Interview Invitation</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Once approved by HR, Ella emails shortlisted candidates a calendar link so they can book their phone interview.</p>
 </div>
 </div>
-<!-- Phase 4: AI Voice Interview -->
+
+<!-- Stage 08: Ella AI – Conduct Phone Interview -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div>
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 04</span>
-<h3 class="text-headline-xl mb-md">AI Voice Interview</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">Ella conducts natural, conversational voice screens. She evaluates technical depth and soft skills in real-time, providing a consistent experience for every applicant.</p>
+<span class="stage-badge mb-sm">8</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 08</span>
+<h3 class="text-headline-xl mb-md">Ella AI: Conduct Phone Interview</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Ella asks up to 5 total screening questions. HOD custom questions (max 2) are prioritized, with the system adding supplemental AI questions up to the limit. Results are sent to HR by email.</p>
 </div>
-<div class="bg-primary-container p-xl rounded-lg shadow-2xl relative overflow-hidden grain-overlay">
+<div class="bg-primary-container p-xl rounded-lg shadow-2xl relative overflow-hidden">
 <div class="flex items-center gap-md mb-xl">
 <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
 <span class="text-on-primary/80 font-bold tracking-widest text-xs uppercase">Live AI Session</span>
@@ -436,7 +586,7 @@
 <div class="w-24 h-24 rounded-full bg-on-primary/10 flex items-center justify-center mb-md border border-on-primary/20">
 <span class="material-symbols-outlined text-on-primary text-5xl">mic</span>
 </div>
-<p class="text-on-primary text-center font-medium">"Can you describe your experience with microservices?"</p>
+<p class="text-on-primary text-center font-medium">Up to 5 screening questions asked</p>
 </div>
 <div class="mt-xl flex justify-center gap-2 items-end h-12">
 <div class="w-1 h-8 bg-highlight rounded-full animate-bounce"></div>
@@ -446,71 +596,97 @@
 </div>
 </div>
 </div>
-<!-- Phase 5: Post-Interview Approval -->
+
+<!-- Stage 09: HR Next Interview Decision -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="order-2 lg:order-1">
 <div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border border-outline-variant/10">
 <div class="flex items-center gap-md mb-lg">
-<span class="material-symbols-outlined text-highlight text-3xl">analytics</span>
-<h4 class="text-xl font-bold text-primary-container">Interview Insights</h4>
+<span class="material-symbols-outlined text-highlight text-3xl">fact_check</span>
+<h4 class="text-xl font-bold text-primary-container">Approve / Reject</h4>
 </div>
-<div class="space-y-md">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-on-surface-variant">Technical Proficiency</span>
-<span class="font-bold text-primary-container">9/10</span>
+<div class="flex gap-md mb-md">
+<button class="flex-1 btn-primary-custom py-3 rounded-lg font-bold hover:opacity-90 transition-all">Approve</button>
+<button class="flex-1 border border-outline py-3 rounded-lg font-bold hover:bg-surface-container-low transition-all">Reject</button>
 </div>
-<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
-<div class="bg-primary-container h-full w-[90%]"></div>
+<div class="p-md rounded-lg bg-red-50 border border-error/30 flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-lg">mail</span>
+<p class="text-xs text-error font-medium">If rejected, a rejection email sent to thank the candidate and notify the outcome.</p>
 </div>
-<div class="flex justify-between text-sm mb-1">
-<span class="text-on-surface-variant">Communication</span>
-<span class="font-bold text-primary-container">8/10</span>
-</div>
-<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
-<div class="bg-primary-container h-full w-[80%]"></div>
-</div>
-</div>
-<button class="w-full mt-xl py-3 border border-highlight text-highlight font-bold rounded-lg hover:bg-highlight hover:text-white transition-all">Review Full Recording</button>
 </div>
 </div>
 <div class="order-1 lg:order-2">
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 05</span>
-<h3 class="text-headline-xl mb-md">Post-Interview Approval</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">Review AI-generated summaries, sentiment analysis, and full recordings. HR teams make the final call on which candidates proceed to the final hiring manager meeting.</p>
+<span class="stage-badge mb-sm">9</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 09</span>
+<h3 class="text-headline-xl mb-md">HR Next Interview Decision: Approve / Reject</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">HR reviews the Ella phone interview result and decides whether the candidate will proceed to the next interview with the HOD.</p>
 </div>
 </div>
-<!-- Phase 6: HOD Meeting -->
+
+<!-- Stage 10: Ella AI – Send Next Interview Invitation -->
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div>
-<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block">Phase 06</span>
-<h3 class="text-headline-xl mb-md">HOD Meeting &amp; Decision</h3>
-<p class="text-body-lg text-on-surface-variant leading-relaxed">The final stage. Head of Departments meet the top-tier candidates. All previous data—from resume to AI interview—is consolidated into a single decision-ready profile.</p>
+<span class="stage-badge mb-sm">10</span>
+<span class="text-highlight font-bold tracking-widest text-xs uppercase mb-sm block mt-2">Stage 10</span>
+<h3 class="text-headline-xl mb-md">Ella AI: Send Next Interview Invitation</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">Once approved by HR, Ella schedules the next interview, face-to-face with the HOD, using the HOD's available dates and times already pre-set in the Requisition Form, and sends the invitation.</p>
 </div>
-<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border-2 border-primary-container relative">
-<span class="cf-corner cf-tl cf-navy"></span>
-<span class="cf-corner cf-br cf-navy"></span>
+<div class="bg-surface-container-lowest p-xl rounded-lg shadow-premium border-2 border-primary-container">
 <div class="flex items-center justify-between mb-xl">
 <div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-primary-container">handshake</span>
-<span class="font-bold text-primary-container">Final Decision Stage</span>
+<span class="material-symbols-outlined text-primary-container">groups</span>
+<span class="font-bold text-primary-container">Next Interview Email</span>
 </div>
-<span class="text-xs font-bold text-on-surface-variant uppercase">HOD Review</span>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Pre-set HOD Availability</span>
 </div>
-<div class="flex gap-md">
-<button class="flex-1 btn-primary-custom py-4 rounded-lg font-bold shadow-lg hover:scale-105 transition-all">Hire Candidate</button>
-<button class="flex-1 border border-outline py-4 rounded-lg font-bold hover:bg-surface-container-low transition-all">Archive</button>
+<p class="text-sm text-on-surface-variant mb-lg">Date &amp; time options based on HOD availability pre-set in the Requisition Form.</p>
+<div class="flex items-center gap-sm p-md bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-on-primary">check_circle</span>
+<span class="font-bold text-on-primary">HOD Next Interview &amp; Assessment</span>
 </div>
 </div>
 </div>
+
 </div>
+
+<!-- Key Rules Strip -->
+<div class="mt-xxl bg-surface-container-lowest border border-outline-variant/20 rounded-lg shadow-premium p-lg">
+<p class="text-center text-xs font-bold uppercase tracking-widest text-primary-container mb-lg">Key Rules</p>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-lg text-center">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">radio_button_checked</span>
+<span class="text-xs text-on-surface-variant">Portal-first approach</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">link</span>
+<span class="text-xs text-on-surface-variant">Every candidate link is AI-tracked</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">tune</span>
+<span class="text-xs text-on-surface-variant">HR controls AI via policies &amp; prompts</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">quiz</span>
+<span class="text-xs text-on-surface-variant">Ella refines resumes &amp; uses the 5-question screening limit</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">mail</span>
+<span class="text-xs text-on-surface-variant">Booking emails are Ella-generated</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-highlight">visibility</span>
+<span class="text-xs text-on-surface-variant">Statuses are transparent &amp; tracked</span>
+</div>
+</div>
+</div>
+
 </div>
 </section>
 <!-- Features Grid -->
 <section class="py-section-gap max-w-container-max mx-auto px-lg" id="features">
 <div class="text-center mb-xxl">
 <h2 class="text-display-lg">Enterprise-Grade Recruitment</h2>
-<div class="title-bar"></div>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-lg">Powerful tools built for high-performance HR teams.</p>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Powerful tools built for high-performance HR teams.</p>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-lg">
 <div class="p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/20 hover:shadow-xl transition-all group">
@@ -548,8 +724,7 @@
 <div class="max-w-container-max mx-auto px-lg">
 <div class="text-center mb-xxl">
 <h2 class="text-display-lg mb-md">Simple, Usage-Based Pricing</h2>
-<div class="title-bar"></div>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-lg">Pay only for what you screen and schedule. No subscriptions, no lock-in.</p>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Pay only for what you screen and schedule. No subscriptions, no lock-in.</p>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-lg items-stretch">
 
@@ -608,8 +783,6 @@
 
 <!-- Tier 3: Screening Pack (Most Popular) -->
 <div class="price-card p-lg bg-surface-container-lowest rounded-lg shadow-premium border-2 border-highlight relative hover:shadow-xl transition-all">
-<span class="cf-corner cf-tl"></span>
-<span class="cf-corner cf-br"></span>
 <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-highlight text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow whitespace-nowrap">Most Popular</span>
 <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-sm mt-sm">Screening Pack</span>
 <div class="mb-md mt-2 flex items-baseline gap-2 flex-wrap">
@@ -635,7 +808,7 @@
 </div>
 
 <!-- Tier 4: Enterprise -->
-<div class="price-card p-lg bg-primary-container rounded-lg shadow-premium hover:shadow-xl transition-all relative overflow-hidden grain-overlay">
+<div class="price-card p-lg bg-primary-container rounded-lg shadow-premium hover:shadow-xl transition-all">
 <span class="text-xs font-bold uppercase tracking-widest text-on-primary/60 mb-sm">Enterprise</span>
 <div class="mb-md mt-2">
 <span class="text-on-primary font-extrabold" style="font-size:36px;">Custom</span>
@@ -659,7 +832,7 @@
 <span class="text-sm text-on-primary/80">Volume-based pricing</span>
 </li>
 </ul>
-<a class="w-full text-center bg-on-primary text-primary-container py-3 rounded-lg font-bold hover:opacity-90 transition-all" href="#contact">Contact Sales</a>
+<a class="w-full text-center bg-on-primary text-primary-container py-3 rounded-lg font-bold hover:opacity-90 transition-all" href="#contact">Call Sales</a>
 </div>
 
 </div>
@@ -671,9 +844,8 @@
 <div class="max-w-container-max mx-auto px-lg relative z-10">
 <div class="grid lg:grid-cols-2 gap-xxl items-center">
 <div class="text-on-primary">
-<h2 class="text-display-lg text-on-primary">Ready to Scale with Intelligence?</h2>
-<div class="title-bar title-bar-left"></div>
-<p class="text-body-lg text-on-primary/70 mb-xl leading-relaxed mt-lg">Join hundreds of forward-thinking HR teams using Ella to reclaim their time and build better companies.</p>
+<h2 class="text-display-lg text-on-primary mb-lg">Ready to Scale with Intelligence?</h2>
+<p class="text-body-lg text-on-primary/70 mb-xl leading-relaxed">Join hundreds of forward-thinking HR teams using Ella to reclaim their time and build better companies.</p>
 <div class="space-y-lg">
 <div class="flex items-start gap-md">
 <span class="material-symbols-outlined text-highlight">check_circle</span>
@@ -725,11 +897,11 @@
 <span class="material-symbols-outlined text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">graphic_eq</span>
 </div>
 <div>
-<span class="text-lg font-bold text-on-primary tracking-tight block">Ella HR Assistant</span>
-<span class="text-on-primary/50 text-xs font-medium">Powered by McLink Group</span>
+<span class="text-lg font-bold text-on-primary tracking-tight block">Ella AI</span>
+<span class="text-on-primary/50 text-xs font-medium">HR AI Screening &amp; Outbound Recruiter Agent · Powered by McLink Group</span>
 </div>
 </div>
-<p class="text-on-primary/40 text-xs font-medium">© 2024 Ella HR Assistant. All rights reserved.</p>
+<p class="text-on-primary/40 text-xs font-medium">© 2026 Ella AI. All rights reserved.</p>
 </div>
 </footer>
 <script>
