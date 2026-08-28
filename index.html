@@ -707,10 +707,15 @@
 <div class="glow-top bg-[#B9C7FF] right-0 -top-10 opacity-40"></div>
 <div class="max-w-container-max mx-auto px-lg relative z-10">
 <div class="text-center mb-xxl">
-<h2 class="text-display-lg mb-md">Simple, Usage-Based Pricing</h2>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Pay only for the AI CV Analysis and AI Phone Interview credits you use. All powered by Ella Credits.</p>
+<span class="subheadline-pill"><span class="dot"></span>Pricing Plan</span>
+<h2 class="text-display-lg mb-md">Explore Our Flexible Pricing for Smarter Hiring</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Simple, transparent, usage-based pricing — pay only for the AI CV Analysis and AI Phone Interview credits you use. All powered by Ella Credits.</p>
+<div class="mt-lg inline-flex items-center gap-1 rounded-full bg-surface-container-lowest border border-outline-variant/20 p-1 shadow-premium">
+<button id="pricing-toggle-cards" class="px-lg py-3 rounded-full text-sm font-bold btn-primary-custom transition-all">Monthly</button>
+<button id="pricing-toggle-compare" class="px-lg py-3 rounded-full text-sm font-bold text-on-surface-variant transition-all">Compare</button>
 </div>
-<div class="grid md:grid-cols-3 gap-lg items-stretch">
+</div>
+<div id="pricing-cards-view" class="grid md:grid-cols-3 gap-lg items-stretch">
 
 <!-- Tier 1: Free Trial -->
 <div class="price-card p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/20 hover:shadow-xl transition-all">
@@ -831,7 +836,242 @@
 </div>
 
 </div>
-<p class="text-center text-xs text-on-surface-variant mt-xl">All prices shown in USD. Credits are $0.40 each; buying 2,000+ credits in one transaction gets 10% off automatically. Every AI recommendation is reviewed by your HR team before a decision is made.</p>
+<p class="text-center text-xs text-on-surface-variant mt-xl mb-xxl">All prices shown in USD. Credits are $0.40 each; buying 2,000+ credits in one transaction gets 10% off automatically. Every AI recommendation is reviewed by your HR team before a decision is made.</p>
+
+<!-- How Ella Credits Work -->
+<div class="grid md:grid-cols-3 gap-lg mb-xxl">
+<div class="flex items-start gap-md p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10">
+<span class="material-symbols-outlined text-highlight text-3xl">shopping_cart</span>
+<div>
+<p class="font-bold text-primary-container mb-1">Buy Only What You Need</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Top up anytime. Unused credits remain valid for 1 year.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10">
+<span class="material-symbols-outlined text-highlight text-3xl">local_offer</span>
+<div>
+<p class="font-bold text-primary-container mb-1">Volume Discount Automatically Applied</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Buy 2,000 credits or more at one go (per transaction) and enjoy 10% off automatically.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10">
+<span class="material-symbols-outlined text-highlight text-3xl">event_available</span>
+<div>
+<p class="font-bold text-primary-container mb-1">Credit Validity</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">All purchased credits are valid for 1 year from the date of purchase.</p>
+</div>
+</div>
+</div>
+
+<!-- Compare Plan -->
+<div id="pricing-compare-view">
+<div class="text-center mb-xl">
+<h3 class="text-headline-lg mb-sm">Discover The Best Plan For Your Business</h3>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Choose the pricing option that best fits your hiring volume, support needs, and workflow requirements.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10 overflow-x-auto mb-xxl">
+<table class="w-full min-w-[800px] border-collapse text-sm">
+<thead>
+<tr>
+<th class="text-left p-lg border-b border-r border-outline-variant/20 w-[30%]">
+<div class="font-bold text-primary-container">Features</div>
+</th>
+<th class="text-center p-lg border-b border-r border-outline-variant/20">
+<div class="font-bold text-primary-container">Free Trial</div>
+<div class="text-2xl font-extrabold text-primary-container mt-1">Free</div>
+<div class="text-xs text-on-surface-variant">15 credits, 30-day validity</div>
+</th>
+<th class="text-center p-lg border-b border-r border-outline-variant/20 bg-surface-container-low">
+<span class="inline-block bg-highlight text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Popular</span>
+<div class="font-bold text-primary-container">Ella Credits</div>
+<div class="text-2xl font-extrabold text-primary-container mt-1">$0.40</div>
+<div class="text-xs text-on-surface-variant">per credit</div>
+</th>
+<th class="text-center p-lg border-b border-outline-variant/20">
+<div class="font-bold text-primary-container">Enterprise</div>
+<div class="text-2xl font-extrabold text-primary-container mt-1">Custom</div>
+<div class="text-xs text-on-surface-variant">pricing</div>
+</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Best for</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">Try Ella, risk-free</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">Flexible hiring, pay as you go</td>
+<td class="p-md text-center border-b border-outline-variant/20">High-volume &amp; custom needs</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Price</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">Free</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">$0.40 / credit</td>
+<td class="p-md text-center border-b border-outline-variant/20">Custom</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Volume discount</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">—</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> 10% off 2,000+ credits</td>
+<td class="p-md text-center border-b border-outline-variant/20">Custom</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Credits included</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">15 trial credits (one-time)</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">Buy any amount</td>
+<td class="p-md text-center border-b border-outline-variant/20">Custom</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Credit validity</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">30 days</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">1 year</td>
+<td class="p-md text-center border-b border-outline-variant/20">Custom</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Job roles</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">1</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">Unlimited</td>
+<td class="p-md text-center border-b border-outline-variant/20">Custom</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">AI CV Analysis</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> 1 credit</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> 1 credit</td>
+<td class="p-md text-center border-b border-outline-variant/20"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> Included</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">AI Phone Interview</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> 10 credits</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> 10 credits</td>
+<td class="p-md text-center border-b border-outline-variant/20"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> Included</td>
+</tr>
+<tr>
+<td class="p-md border-b border-r border-outline-variant/20 font-medium text-primary-container">Support</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20">Email support</td>
+<td class="p-md text-center border-b border-r border-outline-variant/20 bg-surface-container-low">Email support</td>
+<td class="p-md text-center border-b border-outline-variant/20">Dedicated account manager</td>
+</tr>
+<tr>
+<td class="p-md border-r border-outline-variant/20 font-medium text-primary-container">API &amp; custom integration</td>
+<td class="p-md text-center border-r border-outline-variant/20">—</td>
+<td class="p-md text-center border-r border-outline-variant/20 bg-surface-container-low">—</td>
+<td class="p-md text-center"><span class="material-symbols-outlined text-highlight align-middle text-base">check_circle</span> Included</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Credit System, Examples & Why Choose -->
+<div class="grid md:grid-cols-3 gap-lg items-start mb-xl">
+<div class="p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10">
+<p class="font-bold text-primary-container mb-md">Ella Credit System</p>
+<div class="space-y-md text-sm text-on-surface-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-highlight">description</span>
+<span>1 AI CV Analysis = <strong class="text-primary-container">1 Ella Credit</strong></span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-highlight">call</span>
+<span>1 AI Phone Interview = <strong class="text-primary-container">10 Ella Credits</strong></span>
+</div>
+</div>
+</div>
+
+<div class="p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10 overflow-x-auto">
+<p class="font-bold text-primary-container mb-md">Examples: How Credits Are Used</p>
+<table class="w-full text-xs text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant">
+<th class="pb-2 pr-2 font-semibold">Example</th>
+<th class="pb-2 pr-2 font-semibold text-center">CV Analysis</th>
+<th class="pb-2 pr-2 font-semibold text-center">Phone Interview</th>
+<th class="pb-2 font-semibold text-center">Total</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr class="border-t border-outline-variant/20"><td class="py-2 pr-2">All CV Analysis</td><td class="py-2 pr-2 text-center">1,500</td><td class="py-2 pr-2 text-center">0</td><td class="py-2 text-center">1,500</td></tr>
+<tr class="border-t border-outline-variant/20 bg-surface-container-low"><td class="py-2 pr-2">Screening-heavy</td><td class="py-2 pr-2 text-center">1,000</td><td class="py-2 pr-2 text-center">50</td><td class="py-2 text-center">1,500</td></tr>
+<tr class="border-t border-outline-variant/20"><td class="py-2 pr-2">Balanced</td><td class="py-2 pr-2 text-center">750</td><td class="py-2 pr-2 text-center">75</td><td class="py-2 text-center">1,500</td></tr>
+<tr class="border-t border-outline-variant/20"><td class="py-2 pr-2">Interview-heavy</td><td class="py-2 pr-2 text-center">500</td><td class="py-2 pr-2 text-center">100</td><td class="py-2 text-center">1,500</td></tr>
+<tr class="border-t border-outline-variant/20"><td class="py-2 pr-2">All Interviews</td><td class="py-2 pr-2 text-center">0</td><td class="py-2 pr-2 text-center">150</td><td class="py-2 text-center">1,500</td></tr>
+</tbody>
+</table>
+<p class="mt-sm text-xs text-on-surface-variant">Credits are flexible and can be used any way you like.</p>
+</div>
+
+<div class="p-lg bg-surface-container-lowest rounded-lg shadow-premium border border-outline-variant/10">
+<p class="font-bold text-primary-container mb-md">Why Choose Ella Credits?</p>
+<ul class="space-y-sm">
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> Save 10% when you buy 2,000+ credits</li>
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> More value with every credit</li>
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> Credits valid for 1 year</li>
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> Use credits your way, anytime</li>
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> No monthly fees or commitments</li>
+<li class="flex items-start gap-sm text-sm text-on-surface-variant"><span class="material-symbols-outlined text-highlight text-lg">check_circle</span> Simple, transparent, predictable</li>
+</ul>
+</div>
+</div>
+
+<div class="max-w-2xl mx-auto text-center bg-surface-container-lowest border border-outline-variant/20 rounded-full shadow-premium px-lg py-3 text-sm text-on-surface-variant flex items-center justify-center gap-sm mb-xxl">
+<span class="material-symbols-outlined text-highlight">shield</span>
+<span>Your data is safe with Ella. Enterprise-grade security and data protection on all plans.</span>
+</div>
+
+<!-- FAQ -->
+<div class="text-center mb-xl">
+<span class="subheadline-pill"><span class="dot"></span>FAQ</span>
+<h3 class="text-headline-lg mb-sm">Frequently Asked Questions</h3>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Got questions? Here's everything you need to know about getting started with Ella AI.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-md">
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg" open>
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">Is there a free trial available?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">Yes. You can try Ella with 15 one-time trial credits, valid for 30 days. No subscription or credit card is required to begin the trial.</p>
+</details>
+
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg">
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">Can I upgrade to Ella Credits later?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">Yes. You can start with the free trial and purchase Ella Credits anytime when you are ready to scale hiring activity.</p>
+</details>
+
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg">
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">How do Ella Credits work?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">AI CV Analysis uses 1 credit per resume, and AI Phone Interview uses 10 credits per candidate. Credits are consumed only when actions are used, purchased credits stay valid for 1 year, and buying 2,000+ credits in one transaction gets you 10% off automatically.</p>
+</details>
+
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg">
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">Does the AI make the final hiring decision?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">No. AI CV Analysis and AI Phone Interview are designed to assist your HR team, not replace it. Every recommendation is reviewed by a person before a candidate moves forward, and the final HR Interview stage is scheduled and conducted by your team.</p>
+</details>
+
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg">
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">Is my data safe and secure?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">Yes. We apply secure workflow practices and can discuss enterprise-grade support and custom requirements for larger teams.</p>
+</details>
+
+<details class="bg-surface-container-lowest border border-outline-variant/10 rounded-lg shadow-premium p-lg">
+<summary class="flex items-center justify-between gap-lg cursor-pointer">
+<span class="font-bold text-primary-container">How can I get support if I encounter an issue?</span>
+<span class="material-symbols-outlined text-highlight">expand_more</span>
+</summary>
+<p class="mt-sm text-sm text-on-surface-variant leading-relaxed">Free Trial and Ella Credits plans include email support. Enterprise plans may include a dedicated account manager and custom support arrangements.</p>
+</details>
+</div>
+
 </div>
 </section>
 <!-- Final CTA & Form -->
@@ -935,6 +1175,32 @@
 
     window.addEventListener('scroll', setActiveNav, { passive: true });
     setActiveNav();
+
+    const pricingSimpleBtn = document.getElementById('pricing-toggle-cards');
+    const pricingCompareBtn = document.getElementById('pricing-toggle-compare');
+    const pricingCardsView = document.getElementById('pricing-cards-view');
+    const pricingCompareView = document.getElementById('pricing-compare-view');
+
+    function activatePricingSimple() {
+        pricingSimpleBtn.classList.add('btn-primary-custom');
+        pricingSimpleBtn.classList.remove('text-on-surface-variant');
+        pricingCompareBtn.classList.remove('btn-primary-custom');
+        pricingCompareBtn.classList.add('text-on-surface-variant');
+        pricingCardsView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function activatePricingCompare() {
+        pricingCompareBtn.classList.add('btn-primary-custom');
+        pricingCompareBtn.classList.remove('text-on-surface-variant');
+        pricingSimpleBtn.classList.remove('btn-primary-custom');
+        pricingSimpleBtn.classList.add('text-on-surface-variant');
+        pricingCompareView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (pricingSimpleBtn && pricingCompareBtn) {
+        pricingSimpleBtn.addEventListener('click', activatePricingSimple);
+        pricingCompareBtn.addEventListener('click', activatePricingCompare);
+    }
 </script>
 
 
